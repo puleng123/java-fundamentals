@@ -7,7 +7,7 @@ public class RetirementGoal {
         Scanner sc = new Scanner(System.in);
 
         int noOfYears;
-        double annualSavings;
+        double amountToBeSaved;
 
 
         while (true) {
@@ -22,14 +22,29 @@ public class RetirementGoal {
 
         while (true) {
             System.out.print("Enter the amount of money you can save annually: ");
-            annualSavings = sc.nextDouble();
-            if (annualSavings > 0) {
+            amountToBeSaved = sc.nextDouble();
+            if (amountToBeSaved > 0) {
                 break;
             }
             System.out.println("Invalid input. Please enter a positive number.");
         }
 
-        double totalSavings = noOfYears * annualSavings;
-        System.out.println("You will have saved " + totalSavings + " by retirement." );
+        //double totalSavings = noOfYears * amountToBeSaved;
+        //System.out.println("You will have saved " + totalSavings + " by retirement" );
+
+        double savings = amountToBeSaved;
+
+        for(int i = 1; i <= noOfYears; i++){
+            System.out.print("Year " + i + " = $" +  savings + "\n");
+            //totalSavings += amountToBeSaved;
+            if(i !=5){
+                savings = savings + (savings * 0.10);
+            }
+
+
+        }
+
+        System.out.println("==========Retirement Calculations=========="+ "\n" +"Your savings would have grown to $" +  savings + " in " + noOfYears + " years. From your initial deposit of $" + amountToBeSaved );
+
     }
 }
