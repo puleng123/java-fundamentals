@@ -40,7 +40,7 @@ public class DistanceFromAvg {
             for (int i = 0; i < count; i++)
             {
                 double distance = Math.abs(numbers[i] - average);
-                System.out.println("Value: " + numbers[i] + " → Distance: " + distance);
+                System.out.println("Value: " + numbers[i] + "  Distance: " + distance);
             }
         }
         else
